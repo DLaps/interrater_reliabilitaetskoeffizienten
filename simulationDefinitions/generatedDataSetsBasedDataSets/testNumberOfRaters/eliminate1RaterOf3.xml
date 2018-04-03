@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simulation xmlns="http://schemas.danlaps.de/InterRaterAgreement/SimulationDefinition" name="eliminate1RaterOf3" numberOfInstances="30">
+  <generatedDataSetsBasedDataSet directoryOfGeneratedDataSets="eliminateRatersDataSets3R">
+    <raterCount descriptionPattern="# Raters">
+      <range from="2" to="3"/>
+    </raterCount>
+    <tokenCount value="100"/>
+  </generatedDataSetsBasedDataSet>
+  <coefficients>
+    <multiBennetsS/>
+    <multiCohensKappa/>
+    <multiScottsPi/>
+    <percentage/>
+    <krippendorffsAlpha metric="nominal"/>
+    <multiWeightedCohensKappa metric="nominal"/>
+  </coefficients>
+</simulation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simulation xmlns="http://schemas.danlaps.de/InterRaterAgreement/SimulationDefinition" name="2R4C" numberOfInstances="7">
+  <generatedDataSetsBasedUnitizingDataSet directoryOfGeneratedDataSets="dataSets" >
+    <raterCount value="2"/>
+    <categoryCount value="4"/>
+    <dataSetLengthFactor descriptionPattern="# Length Fact.">
+      <range from="1"  to="10"/>
+    </dataSetLengthFactor>
+  </generatedDataSetsBasedUnitizingDataSet>
+  <coefficients>
+    <krippendorffsAlphaU/>
+  </coefficients>
+</simulation>

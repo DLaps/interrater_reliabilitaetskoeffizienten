@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simulation xmlns="http://schemas.danlaps.de/InterRaterAgreement/SimulationDefinition" name="2R" numberOfInstances="2">
+  <generatedDataSetsBasedDataSet directoryOfGeneratedDataSets="dataSets">
+    <raterCount value="2"/>
+    <tokenCount descriptionPattern="# Tokens">
+      <range from="40" step="20" to="80"/>
+      <range from="100" step="100" to="200"/>
+      <range from="400" step="200" to="800"/>
+    </tokenCount>
+  </generatedDataSetsBasedDataSet>
+  <coefficients>
+    <bennetsS/>
+    <scottsPi/>
+    <cohensKappa/>
+    <multiBennetsS/>
+    <multiCohensKappa/>
+    <multiScottsPi/>
+    <percentage/>
+    <krippendorffsAlpha metric="nominal"/>
+    <krippendorffsAlpha metric="interval"/>
+    <krippendorffsAlpha metric="ordinal"/>
+    <krippendorffsAlpha metric="ratio"/>
+    <multiWeightedCohensKappa metric="nominal"/>
+    <multiWeightedCohensKappa metric="interval"/>
+    <multiWeightedCohensKappa metric="ordinal"/>
+    <multiWeightedCohensKappa metric="ratio"/>
+  </coefficients>
+</simulation>

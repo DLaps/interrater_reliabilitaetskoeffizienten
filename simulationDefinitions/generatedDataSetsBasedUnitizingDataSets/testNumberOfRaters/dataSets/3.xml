@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<unitizingDataSet numberOfRaters="2" startPosition="0" endLocation="99" xmlns="http://schemas.danlaps.de/InterRaterAgreement/UnitizingDataSet">
+  <unit startLocation="3" length="5" rater="0" category="0" />
+  <unit startLocation="13" length="5" rater="0" category="0" />
+  <unit startLocation="28" length="5" rater="0" category="0" />
+  <unit startLocation="38" length="5" rater="0" category="0" />
+  <unit startLocation="43" length="5" rater="0" category="0" />
+  <unit startLocation="53" length="5" rater="0" category="0" />
+  <unit startLocation="68" length="5" rater="0" category="0" />
+  <unit startLocation="73" length="5" rater="0" category="0" />
+  <unit startLocation="88" length="5" rater="0" category="0" />
+  <unit startLocation="98" length="2" rater="0" category="0" />
+  <unit startLocation="1" length="9" rater="1" category="0" />
+  <unit startLocation="10" length="40" rater="1" category="0" />
+  <unit startLocation="55" length="30" rater="1" category="0" />
+</unitizingDataSet>

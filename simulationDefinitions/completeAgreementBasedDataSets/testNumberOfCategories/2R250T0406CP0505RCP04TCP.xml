@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<simulation xmlns="http://schemas.danlaps.de/InterRaterAgreement/SimulationDefinition" name="2R250T0406CP0505RCP04TCP" numberOfInstances="400">
+  <completeAgreementBasedDataSet>
+    <categoryProbabilities>
+      <element value="0.4"/>
+      <element value="0.6"/>
+    </categoryProbabilities>
+    <categoryCount descriptionPattern="# Cat.">
+      <range from="3" step="3" to="12"/>
+      <range from="15" step="10" to="35"/>
+    </categoryCount>
+    <raterCount value="2"/>
+    <tokenCount value="250"/>
+    <ratingChangeProbabilities>
+      <element value="0.5"/>
+      <element value="0.5"/>
+    </ratingChangeProbabilities>
+    <tokenChangeProbability value="0.4"/>
+  </completeAgreementBasedDataSet>
+  <coefficients>
+    <percentage/>
+  </coefficients>
+</simulation>

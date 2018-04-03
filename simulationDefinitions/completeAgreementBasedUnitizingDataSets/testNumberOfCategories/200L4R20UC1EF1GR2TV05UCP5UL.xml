@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<simulation xmlns="http://schemas.danlaps.de/InterRaterAgreement/SimulationDefinition" name="200L4R20UC1EF1GR2TV05UCP5UL" numberOfInstances="200">
+  <completeAgreementBasedUnitizingDataSet>
+    <dataSetLength value="200"/>
+    <categoryCount descriptionPattern="# Cat.">
+      <range from="1" to="10"/>
+    </categoryCount>
+    <raterCount value="4"/>
+    <unitCount>
+      <element value="20"/>
+    </unitCount>
+    <enlargementFactors>
+      <element value="1"/>
+    </enlargementFactors>
+    <numberOfGenerationRounds value="1"/>
+    <translationValues>
+      <element value="2"/>
+    </translationValues>
+    <unitChangeProbalities>
+      <element value="0.5"/>
+    </unitChangeProbalities>
+    <unitsLength>
+      <element value="5"/>
+    </unitsLength>
+  </completeAgreementBasedUnitizingDataSet>
+  <coefficients>
+    <krippendorffsAlphaU/>
+  </coefficients>
+</simulation>

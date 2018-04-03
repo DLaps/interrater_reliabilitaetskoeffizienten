@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simulation xmlns="http://schemas.danlaps.de/InterRaterAgreement/SimulationDefinition" name="4R100T0802CP03_03_03_0RCP02TCP" numberOfInstances="300">
+  <completeAgreementBasedDataSet>
+    <categoryProbabilities>
+      <element value="0.8"/>
+      <element value="0.2"/>
+    </categoryProbabilities>
+    <categoryCount descriptionPattern="# Cat.">
+      <range from="2" to="2"/>
+      <range from="3" step="3" to="12"/>
+    </categoryCount>
+    <raterCount value="4"/>
+    <tokenCount value="100"/>
+    <ratingChangeProbabilities>
+      <element value="0.3"/>
+      <element value="0.3"/>
+      <element value="0.3"/>
+      <element value="0"/>
+    </ratingChangeProbabilities>
+    <tokenChangeProbability value="0.2"/>
+  </completeAgreementBasedDataSet>
+  <coefficients>
+    <multiBennetsS/>
+    <multiCohensKappa/>
+    <multiScottsPi/>
+    <percentage/>
+    <krippendorffsAlpha metric="nominal"/>
+    <krippendorffsAlpha metric="interval"/>
+    <krippendorffsAlpha metric="ordinal"/>
+    <krippendorffsAlpha metric="ratio"/>
+    <multiWeightedCohensKappa metric="nominal"/>
+    <multiWeightedCohensKappa metric="interval"/>
+    <multiWeightedCohensKappa metric="ordinal"/>
+    <multiWeightedCohensKappa metric="ratio"/>
+  </coefficients>
+</simulation>
