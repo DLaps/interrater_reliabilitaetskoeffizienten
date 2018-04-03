@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://schemas.danlaps.de/InterRaterAgreement/UnitizingDataSet"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.danlaps.de/InterRaterAgreement/UnitizingDataSet"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="unitizingDataSet" type="unitizingDataSetType"/>
+
+  <xs:complexType name="unitizingDataSetType">
+    <xs:sequence maxOccurs="unbounded" minOccurs="1">
+      <xs:element name="unit" type="unitType"/>
+    </xs:sequence>
+    <xs:attribute name="numberOfRaters">
+      <xs:simpleType>
+        <xs:restriction base="xs:positiveInteger">
+          <xs:minInclusive value="2"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="startPosition" type="xs:nonNegativeInteger"/>
+    <xs:attribute name="endLocation" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+
+  <xs:complexType name="unitType">
+    <xs:attribute name="startLocation" type="xs:nonNegativeInteger" use="required"/>
+    <xs:attribute name="length" type="xs:positiveInteger" use="required"/>
+    <xs:attribute name="rater" type="xs:nonNegativeInteger" use="required"/>
+    <xs:attribute name="category" type="xs:nonNegativeInteger" use="required"/>
+  </xs:complexType>
+</xs:schema>

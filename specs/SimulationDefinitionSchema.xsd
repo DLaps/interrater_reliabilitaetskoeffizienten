@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://schemas.danlaps.de/InterRaterAgreement/SimulationDefinition"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.danlaps.de/InterRaterAgreement/SimulationDefinition"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="simulation" type="simulationType"/>
+
+  <xs:complexType name="weightedCoefficientType">
+    <xs:attribute name="metric" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="nominal"/>
+          <xs:enumeration value="interval"/>
+          <xs:enumeration value="ordinal"/>
+          <xs:enumeration value="ratio"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  
+  <xs:complexType name="coefficientsType">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="bennetsS" />
+      <xs:element name="cohensKappa" />
+      <xs:element name="krippendorffsAlphaU" />
+      <xs:element name="krippendorffsAlpha" type="weightedCoefficientType"/>
+      <xs:element name="multiBennetsS"/>
+      <xs:element name="multiCohensKappa"/>
+      <xs:element name="multiScottsPi"/>
+      <xs:element name="percentage" />
+      <xs:element name="scottsPi" />
+      <xs:element name="multiWeightedCohensKappa" type="weightedCoefficientType"/>
+    </xs:choice>    
+  </xs:complexType>
+  
+  <xs:complexType name="completeAgreementBasedDSType">
+    <xs:all>
+      <xs:element name="categoryProbabilities" type="doubleArrayType" minOccurs="0"/>
+      <xs:element name="categoryCount" type="integerType" minOccurs="0"/>
+      <xs:element name="raterCount" type="integerType" minOccurs="0"/>
+      <xs:element name="tokenCount" type="integerType" minOccurs="0"/>
+      <xs:element name="ratingChangeProbabilities" type="doubleArrayType" minOccurs="0"/>
+      <xs:element name="tokenChangeProbability" type="doubleType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="completeAgreementBasedUnitizingDSType">
+    <xs:all>
+      <xs:element name="dataSetLength" type="integerType" minOccurs="0"/>
+      <xs:element name="categoryCount" type="integerType" minOccurs="0"/>
+      <xs:element name="raterCount" type="integerType" minOccurs="0"/>
+      <xs:element name="unitCount" type="integerArrayType" minOccurs="0"/>
+      <xs:element name="enlargementFactors" type="doubleArrayType" minOccurs="0"/>
+      <xs:element name="numberOfGenerationRounds" type="integerType" minOccurs="0"/>
+      <xs:element name="translationValues" type="integerArrayType" minOccurs="0"/>
+      <xs:element name="unitChangeProbalities" type="doubleArrayType" minOccurs="0"/>
+      <xs:element name="unitsLength" type="integerArrayType" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="generatedDataSetsBasedDSType">
+    <xs:all>
+      <xs:element name="raterCount" type="integerType" minOccurs="0"/>
+      <xs:element name="tokenCount" type="integerType" minOccurs="0"/>
+    </xs:all>
+    <xs:attribute name="directoryOfGeneratedDataSets" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="generatedDataSetsBasedUnitizingDSType">
+    <xs:all>
+      <xs:element name="categoryCount" type="integerType" minOccurs="0"/>
+      <xs:element name="raterCount" type="integerType" minOccurs="0"/>
+      <xs:element name="dataSetLengthFactor" type="integerType" minOccurs="0"/>
+    </xs:all>
+    <xs:attribute name="directoryOfGeneratedDataSets" type="xs:string" use="required"/>
+  </xs:complexType>
+  
+  <xs:simpleType name="nonNegativeDouble">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="doubleType">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="range">
+        <xs:complexType>
+          <xs:attribute name="from" type="nonNegativeDouble" use="required"/>
+          <xs:attribute name="to" type="nonNegativeDouble" use="required"/>
+          <xs:attribute name="step" type="nonNegativeDouble" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="descriptionPattern" type="xs:string" use="optional"/>
+    <xs:attribute name="value" type="nonNegativeDouble" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="doubleArrayType">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="element" type="doubleType"/>
+    </xs:sequence>
+    <xs:attribute name="descriptionPattern" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="integerType">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="range">
+        <xs:complexType>
+          <xs:attribute name="from" type="xs:integer" use="required"/>
+          <xs:attribute name="to" type="xs:integer" use="required"/>
+          <xs:attribute name="step" type="xs:nonNegativeInteger" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="descriptionPattern" type="xs:string" use="optional"/>
+    <xs:attribute name="value" type="xs:integer" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="integerArrayType">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="element" type="integerType"/>
+    </xs:sequence>
+    <xs:attribute name="descriptionPattern" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="simulationType">
+    <xs:sequence>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element name="completeAgreementBasedDataSet" type="completeAgreementBasedDSType"/>
+        <xs:element name="completeAgreementBasedUnitizingDataSet" type="completeAgreementBasedUnitizingDSType" />
+        <xs:element name="generatedDataSetsBasedDataSet" type="generatedDataSetsBasedDSType"/>
+        <xs:element name="generatedDataSetsBasedUnitizingDataSet" type="generatedDataSetsBasedUnitizingDSType"/>
+      </xs:choice>
+      <xs:element name="coefficients" type="coefficientsType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="numberOfInstances" use="optional" type="xs:positiveInteger"/>
+    <xs:attribute name="name" use="required" type="xs:string"/>
+    <xs:attribute name="saveDataSets" use="optional" type="xs:boolean"/>
+  </xs:complexType>
+</xs:schema>

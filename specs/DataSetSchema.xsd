@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://schemas.danlaps.de/InterRaterAgreement/DataSet"
+    elementFormDefault="qualified"
+    xmlns="http://schemas.danlaps.de/InterRaterAgreement/DataSet"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="dataSet" type="dataSetType"/>
+
+  <xs:complexType name="dataSetType">
+    <xs:sequence maxOccurs="unbounded" minOccurs="1">
+      <xs:element name="token" type="tokenType"/>
+    </xs:sequence>
+    <xs:attribute name="numberOfRaters">
+      <xs:simpleType>
+        <xs:restriction base="xs:positiveInteger">
+          <xs:minInclusive value="2"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="tokenType">
+    <xs:sequence>
+      <xs:element name="rating" type="xs:nonNegativeInteger" minOccurs="2" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
